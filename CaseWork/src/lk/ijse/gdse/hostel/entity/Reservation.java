@@ -1,11 +1,26 @@
 package lk.ijse.gdse.hostel.entity;
 
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
+@Table(name = "Reservation")
 public class Reservation {
+    @Id
+    @Column(name = "reservationId",length = 10)
     private String res_id;
+    @Column(name = "date")
     private Date date;
+    @Column(name = "status")
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "studentId",referencedColumnName = "studentId",insertable = false,updatable = false)
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "roomTypeId",referencedColumnName = "roomTypeId",insertable = false,updatable = false)
+    private Room room;
 
     public Reservation() {
     }

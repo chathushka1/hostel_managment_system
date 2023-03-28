@@ -1,10 +1,27 @@
 package lk.ijse.gdse.hostel.entity;
 
+import org.hibernate.annotations.JoinColumnOrFormula;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "Room")
 public class Room {
+
+    @Id
+    @Column(name = "roomTypeId",length = 10)
     private String room_type_id;
+    @Column(name = "type")
     private String type;
+    @Column(name = "keyMoney")
     private String key_money;
+    @Column(name = "qty")
     private int qty;
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "room")
+    private List<Reservation> reservationList= new ArrayList<>();
 
     public Room() {
     }

@@ -1,13 +1,30 @@
 package lk.ijse.gdse.hostel.entity;
 
+import org.hibernate.annotations.JoinColumnOrFormula;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "Student")
 public class Student {
+     @Id
+     @Column(name = "studentId",length = 10)
      private String student_id;
+     @Column(name = "name")
      private String name;
+     @Column(name = "address")
      private String address;
+     @Column(name = "contactNo")
      private String contact_no;
+     @Column(name = "dob")
      private String dob;
+     @Column(name = "gender")
      private String gender;
 
+     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
+     private List<Reservation> reservationList= new ArrayList<>();
      public Student() {
      }
 
