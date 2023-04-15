@@ -1,5 +1,6 @@
 package lk.ijse.gdse.hostel;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,22 +13,22 @@ import java.io.IOException;
 
 import static javafx.application.Application.launch;
 
-public class AppInitializer{
+public class AppInitializer extends Application {
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
 
-        Session session = SessionFactoryConfig.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
+       /* Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();*/
 
 
     }
-  /*  @Override
+    @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/hostel/view/Login.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/hostel/view/MainForm.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Hostel Management System");
         primaryStage.centerOnScreen();
         primaryStage.show();
-    }*/
+    }
 }

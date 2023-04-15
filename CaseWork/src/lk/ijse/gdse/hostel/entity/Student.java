@@ -23,6 +23,8 @@ public class Student {
      @Column(name = "gender")
      private String gender;
 
+
+
      @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
      private List<Reservation> reservationList= new ArrayList<>();
      public Student() {
