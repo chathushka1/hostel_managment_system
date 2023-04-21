@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -24,16 +25,16 @@
             <Font name="ArnoPro-BoldCaption" size="25.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="76.0" layoutY="177.0" onKeyReleased="#txtNameKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Student Name" />
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="76.0" layoutY="235.0" onKeyReleased="#txtAddressKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Address" />
-      <JFXTextField fx:id="txtNIC" labelFloat="true" layoutX="76.0" layoutY="293.0" onKeyReleased="#txtNicKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Date of Birth" />
-      <JFXTextField fx:id="txtTelephone" labelFloat="true" layoutX="76.0" layoutY="405.0" onKeyReleased="#txtTelephoneKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Telephone" />
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="76.0" layoutY="177.0" prefHeight="25.0" prefWidth="268.0" promptText="Student Name" />
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="76.0" layoutY="235.0" prefHeight="25.0" prefWidth="268.0" promptText="Address" />
+      <JFXTextField fx:id="txtDOB" labelFloat="true" layoutX="76.0" layoutY="293.0" prefHeight="25.0" prefWidth="268.0" promptText="Date of Birth" />
+      <JFXTextField fx:id="txtTelephone" labelFloat="true" layoutX="76.0" layoutY="405.0" prefHeight="25.0" prefWidth="268.0" promptText="Telephone" />
       <Label layoutX="72.0" layoutY="73.0" prefHeight="25.0" prefWidth="154.0">
          <font>
             <Font name="ArnoPro-BoldCaption" size="18.0" />
          </font>
       </Label>
-      <JFXButton layoutX="72.0" layoutY="479.0" onAction="#btnRegisterOnAction" prefHeight="35.0" prefWidth="268.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Register">
+      <JFXButton fx:id="btnSaveID" layoutX="72.0" layoutY="479.0" onAction="#btnRegisterOnAction" prefHeight="35.0" prefWidth="268.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Save">
          <font>
             <Font size="18.0" />
          </font>
@@ -41,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="72.0" layoutY="518.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="268.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Update ">
+      <JFXButton layoutX="72.0" layoutY="518.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="268.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Clear">
          <font>
             <Font size="18.0" />
          </font>
@@ -61,14 +62,13 @@
       <Line endX="197.0" endY="-29.0" layoutX="189.0" layoutY="83.0" startX="197.0" startY="524.0" />
       <Line endX="213.0" layoutX="173.0" layoutY="608.0" startX="-139.0" />
       <Line endX="197.0" endY="-30.0" layoutX="-164.0" layoutY="83.0" startX="197.0" startY="525.0" />
-      <JFXTextField fx:id="txtLoanAmount" labelFloat="true" layoutX="76.0" layoutY="352.0" onKeyReleased="#txtLoanAmountKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Gender" />
-      <TableView fx:id="tblDebtor" layoutX="409.0" layoutY="310.0" prefHeight="300.0" prefWidth="649.0">
+      <TableView fx:id="tblStudent" layoutX="409.0" layoutY="310.0" prefHeight="300.0" prefWidth="649.0">
          <columns>
-            <TableColumn fx:id="collDebtorID" minWidth="1.0" prefWidth="67.0" text="Student ID" />
+            <TableColumn fx:id="collStudentID" minWidth="1.0" prefWidth="67.0" text="Student ID" />
             <TableColumn fx:id="collName" minWidth="1.0" prefWidth="131.0" text="Name" />
             <TableColumn fx:id="collAddress" minWidth="1.0" prefWidth="167.0" text="Address" />
-            <TableColumn fx:id="collNIC" minWidth="1.0" prefWidth="92.0" text="Date of Birth" />
-            <TableColumn fx:id="collLoanAmount" minWidth="1.0" prefWidth="86.0" text="Gender" />
+            <TableColumn fx:id="collDOB" minWidth="1.0" prefWidth="92.0" text="Date of Birth" />
+            <TableColumn fx:id="collGender" minWidth="1.0" prefWidth="86.0" text="Gender" />
             <TableColumn fx:id="collTelephone" minWidth="1.0" prefWidth="105.0" text="Telephone" />
          </columns>
       </TableView>
@@ -92,43 +92,8 @@
             <Font name="ArnoPro-BoldCaption" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblName" layoutX="78.0" layoutY="205.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblAddress" layoutX="78.0" layoutY="264.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblNic" layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblLoanAmount" layoutX="77.0" layoutY="376.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="430.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblDId" layoutX="76.0" layoutY="95.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtEmployeeID" labelFloat="true" layoutX="75.0" layoutY="123.0" onKeyReleased="#txtEmIdKeyTypeOnAction" prefHeight="25.0" prefWidth="268.0" promptText="Student ID" />
-      <Label fx:id="lblEmployeeID" layoutX="76.0" layoutY="148.0" prefHeight="25.0" prefWidth="268.0" textFill="RED">
-         <font>
-            <Font name="ArnoPro-BoldCaption" size="12.0" />
-         </font>
-      </Label>
-      <JFXButton layoutX="78.0" layoutY="66.0" onAction="#btnGenarateNewIdOnAction" prefHeight="39.0" prefWidth="173.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="+New Student">
+      <JFXTextField fx:id="txtStudentID" labelFloat="true" layoutX="75.0" layoutY="123.0" prefHeight="25.0" prefWidth="268.0" promptText="Student ID" />
+      <JFXButton fx:id="btnNewStudentId" layoutX="78.0" layoutY="66.0" onAction="#btnGenarateNewIdOnAction" prefHeight="39.0" prefWidth="173.0" style="-fx-background-color: #9be39b,        linear-gradient(#d6d6d6 50%, white 100%),        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 1,2,2; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="+New Student">
          <font>
             <Font size="18.0" />
          </font>
@@ -136,5 +101,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <ComboBox fx:id="cmbGender" layoutX="74.0" layoutY="351.0" prefHeight="25.0" prefWidth="268.0" />
    </children>
 </AnchorPane>

@@ -15,7 +15,8 @@ public class MainFormController {
         Navigation.navigation(Routers.STUDENT,ancSideAnchorPane);
     }
 
-    public void btnRoomOnAction(ActionEvent actionEvent) {
+    public void btnRoomOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigation(Routers.ROOMS,ancSideAnchorPane);
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) {

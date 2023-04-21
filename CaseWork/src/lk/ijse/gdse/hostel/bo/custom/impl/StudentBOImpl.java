@@ -46,22 +46,50 @@ public class StudentBOImpl implements StudentBO {
             transaction.rollback();
             session.close();
             e.printStackTrace();
-            return "S0-001";
+            return "S00-001";
         }
     }
 
     @Override
     public boolean updateStudent(StudentDTO studentDTO) {
-        return false;
+        session =SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            studentDAO.setSession(session);
+            studentDAO.update(new Student(studentDTO.getStudent_id(),studentDTO.getName(),
+                    studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            return false;
+        }
     }
 
     @Override
     public boolean deleteStudent(StudentDTO studentDTO) {
-        return false;
+        session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            studentDAO.setSession(session);
+            studentDAO.delete(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),
+                    studentDTO.getDob(),studentDTO.getGender()));
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            return false;
+        }
     }
 
     @Override
     public String genarateStudentID() {
-        return null;
+        session = SessionFactoryConfig.getInstance().getSession();
+        studentDAO.setSession(session);
+        return studentDAO.genarateNewId();
     }
 }

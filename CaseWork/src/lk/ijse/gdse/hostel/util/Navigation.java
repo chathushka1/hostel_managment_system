@@ -18,6 +18,10 @@ public class Navigation {
                 window.setTitle("Student");
                 initUi("Student.fxml");
                 break;
+            case ROOMS:
+                window.setTitle("Room");
+                initUi("Room.fxml");
+                break;
         }
     }
     private static void initUi(String location) throws IOException {

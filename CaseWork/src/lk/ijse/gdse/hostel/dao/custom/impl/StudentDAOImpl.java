@@ -28,10 +28,10 @@ public class StudentDAOImpl implements StudentDAO {
         session.close();
         if (student!=null){
             String lastId=student.getStudent_id();
-            int newCustomerId=Integer.parseInt(lastId.replace("S0-",""))+1;
-            return String.format("S0-%03d",newCustomerId);
+            int newCustomerId=Integer.parseInt(lastId.replace("S00-",""))+1;
+            return String.format("S00-%03d",newCustomerId);
         }
-        return "S0-001";
+        return "S00-001";
     }
 
     @Override
@@ -51,6 +51,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public String save(Student dto) {
+
         return (String) session.save(dto);
     }
 
