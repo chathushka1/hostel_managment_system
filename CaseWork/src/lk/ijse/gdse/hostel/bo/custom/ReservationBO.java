@@ -4,6 +4,7 @@ import lk.ijse.gdse.hostel.bo.SuperBO;
 import lk.ijse.gdse.hostel.model.ReservationDTO;
 import lk.ijse.gdse.hostel.model.RoomDTO;
 import lk.ijse.gdse.hostel.model.StudentDTO;
+import lk.ijse.gdse.hostel.projection.StudentDetailsDTO;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public interface ReservationBO extends SuperBO {
 
     boolean updateRoomQty(RoomDTO roomDTO) throws Exception;
 
-    //List<StudentDetailsDTO>getAllProjection();
+    List<StudentDetailsDTO>getAllProjection();
 
     boolean checkStatusClick(String id,String status);
 }

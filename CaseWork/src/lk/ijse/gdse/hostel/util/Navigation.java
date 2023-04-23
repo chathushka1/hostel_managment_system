@@ -22,6 +22,10 @@ public class Navigation {
                 window.setTitle("Room");
                 initUi("Room.fxml");
                 break;
+            case RESERVATION:
+                window.setTitle("Reservation");
+                initUi("Reservation.fxml");
+                break;
         }
     }
     private static void initUi(String location) throws IOException {

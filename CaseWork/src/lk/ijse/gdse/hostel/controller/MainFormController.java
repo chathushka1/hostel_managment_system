@@ -19,6 +19,13 @@ public class MainFormController {
         Navigation.navigation(Routers.ROOMS,ancSideAnchorPane);
     }
 
+    public void btnReservationOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigation(Routers.RESERVATION,ancSideAnchorPane);
+
+    }
+
     public void btnLogOutOnAction(ActionEvent actionEvent) {
     }
+
+
 }

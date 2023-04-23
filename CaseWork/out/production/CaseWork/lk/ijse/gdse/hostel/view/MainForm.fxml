@@ -25,7 +25,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutY="303.0" prefHeight="122.0" prefWidth="268.0" styleClass=".circle2" stylesheets="@css/Button.css" text="RESERVATION" textFill="#fcfcfc">
+      <JFXButton layoutY="303.0" onAction="#btnReservationOnAction" prefHeight="122.0" prefWidth="268.0" styleClass=".circle2" stylesheets="@css/Button.css" text="RESERVATION" textFill="#fcfcfc">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
